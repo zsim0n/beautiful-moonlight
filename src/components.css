@@ -1,0 +1,66 @@
+/*
+ * Components
+ * ------------------------------------------------------------------
+ * What Pico doesn't have. Cards, nav, forms, buttons, tables,
+ * accordions and modals come from Pico itself.
+ */
+
+/* Header bar: paper in light, charcoal in dark */
+.bm-header {
+  color: var(--bm-header-fg);
+  background: var(--bm-header-bg);
+}
+.bm-header :is(strong, a:not([role="button"])) {
+  --pico-color: var(--bm-header-fg);
+}
+
+/* Linked card: the whole <article> is a link.
+   Pico turns text inside <a> into the accent; this keeps it readable
+   and only colours the heading on hover. */
+a.bm-card {
+  --pico-color: inherit;
+  display: block;
+  color: inherit;
+}
+a.bm-card > article {
+  transition: box-shadow 0.15s;
+}
+a.bm-card:hover > article {
+  box-shadow: var(--pico-card-box-shadow), 0 0 0 2px var(--pico-primary);
+}
+a.bm-card:hover :is(h1, h2, h3, h4, h5, h6) {
+  --pico-color: var(--pico-primary);
+}
+
+/* Alert */
+.bm-alert {
+  --bm-alert-color: var(--bm-info);
+  margin-bottom: var(--pico-spacing);
+  padding: calc(var(--pico-spacing) * 0.75) var(--pico-spacing);
+  background: color-mix(in srgb, var(--bm-alert-color) 10%, var(--pico-background-color));
+  border-left: 0.25rem solid var(--bm-alert-color);
+  border-radius: var(--pico-border-radius);
+}
+.bm-alert > :last-child { margin-bottom: 0; }
+.bm-alert-success { --bm-alert-color: var(--bm-success); }
+.bm-alert-warning { --bm-alert-color: var(--bm-warning); }
+.bm-alert-danger  { --bm-alert-color: var(--bm-danger); }
+
+/* Badge */
+.bm-badge {
+  display: inline-block;
+  padding: 0.15em 0.65em;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1.4;
+  vertical-align: middle;
+  color: var(--pico-color);
+  background: var(--pico-card-sectioning-background-color);
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 999px;
+}
+.bm-badge-accent {
+  color: var(--pico-primary-inverse);
+  background: var(--pico-primary-background);
+  border-color: transparent;
+}

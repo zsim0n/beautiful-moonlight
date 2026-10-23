@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build output
+storybook-static/
+*.tgz
+
+# Storybook
+*storybook.log
+build-storybook.log
+
+# Logs
+npm-debug.log*
+*.log
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Caches
+.cache/
+.eslintcache
+.vite/
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db

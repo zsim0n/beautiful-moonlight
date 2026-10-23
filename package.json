@@ -1,0 +1,34 @@
+{
+  "name": "beautiful-moonlight",
+  "version": "0.1.0",
+  "description": "A small design system on top of Pico CSS: brand tokens, typography and a few components for zoltansimon.me and timu.io.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Zoltan Simon <hello@zoltansimon.me> (https://zoltansimon.me/)",
+  "repository": "github:zsim0n/beautiful-moonlight",
+  "homepage": "https://zsim0n.github.io/beautiful-moonlight",
+  "keywords": [
+    "picocss",
+    "css",
+    "design-system",
+    "typography"
+  ],
+  "style": "src/beautiful-moonlight.css",
+  "main": "src/beautiful-moonlight.css",
+  "exports": {
+    ".": "./src/beautiful-moonlight.css",
+    "./*": "./src/*"
+  },
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "npx -y live-server@1.2.2 --port=8080"
+  },
+  "peerDependencies": {
+    "@picocss/pico": "^2.0.0"
+  }
+}

@@ -1,0 +1,105 @@
+/*
+ * Tokens
+ * ------------------------------------------------------------------
+ * Brand palette mapped onto Pico's own variables. Load after Pico.
+ *   <html data-brand="timu" data-theme="dark">
+ * Without data-theme, the OS preference decides (as in Pico).
+ * Selectors mirror Pico's so these win the cascade.
+ */
+
+:root {
+  /* zoltansimon.me palette */
+  --bm-laser: #ff3b14;
+  --bm-ember: #ff6a2c;
+  --bm-amber: #e0a45c;
+  --bm-paper: #f1ece4;
+  --bm-ink: #2b2b2e;
+  --bm-charcoal: #16161a;
+  --bm-slate: #1e1e24;
+
+  /* Brand accent: light and dark variant */
+  --bm-accent-light: var(--bm-laser);
+  --bm-accent-dark: var(--bm-ember);
+
+  /* Status */
+  --bm-info: #2f6fb3;
+  --bm-success: #2e8b57;
+  --bm-warning: var(--bm-amber);
+  --bm-danger: #d6342c;
+
+  /* Type */
+  --pico-font-size: 80%;
+  --pico-text-decoration: none;
+}
+
+/* Brand: timu.io */
+[data-brand="timu"] {
+  --bm-accent-light: #663399;
+  --bm-accent-dark: #a77fd8;
+}
+
+/* Light */
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --pico-primary: var(--bm-accent-light);
+  --pico-primary-background: var(--bm-accent-light);
+  --pico-primary-border: var(--pico-primary-background);
+  --pico-primary-underline: color-mix(in srgb, var(--bm-accent-light) 40%, transparent);
+  --pico-primary-hover: color-mix(in srgb, var(--bm-accent-light), black 10%);
+  --pico-primary-hover-background: var(--pico-primary-hover);
+  --pico-primary-hover-border: var(--pico-primary-hover-background);
+  --pico-primary-hover-underline: var(--pico-primary-hover);
+  --pico-primary-focus: color-mix(in srgb, var(--bm-accent-light) 25%, transparent);
+  --pico-primary-inverse: #fff;
+  --pico-text-selection-color: color-mix(in srgb, var(--bm-accent-light) 25%, transparent);
+
+  --bm-header-bg: var(--bm-paper);
+  --bm-header-fg: var(--bm-ink);
+}
+
+/* Dark */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --pico-primary: var(--bm-accent-dark);
+    --pico-primary-background: var(--bm-accent-light);
+    --pico-primary-border: var(--pico-primary-background);
+    --pico-primary-underline: color-mix(in srgb, var(--bm-accent-dark) 40%, transparent);
+    --pico-primary-hover: color-mix(in srgb, var(--bm-accent-dark), white 15%);
+    --pico-primary-hover-background: var(--bm-accent-dark);
+    --pico-primary-hover-border: var(--pico-primary-hover-background);
+    --pico-primary-hover-underline: var(--pico-primary-hover);
+    --pico-primary-focus: color-mix(in srgb, var(--bm-accent-dark) 30%, transparent);
+    --pico-primary-inverse: #fff;
+    --pico-text-selection-color: color-mix(in srgb, var(--bm-accent-dark) 30%, transparent);
+    --pico-background-color: var(--bm-charcoal);
+    --pico-card-background-color: var(--bm-slate);
+
+    --bm-header-bg: var(--bm-charcoal);
+    --bm-header-fg: var(--bm-paper);
+    --bm-info: #6ea8e6;
+    --bm-success: #5cc08a;
+    --bm-danger: #ff6b5e;
+  }
+}
+
+[data-theme="dark"] {
+  --pico-primary: var(--bm-accent-dark);
+  --pico-primary-background: var(--bm-accent-light);
+  --pico-primary-border: var(--pico-primary-background);
+  --pico-primary-underline: color-mix(in srgb, var(--bm-accent-dark) 40%, transparent);
+  --pico-primary-hover: color-mix(in srgb, var(--bm-accent-dark), white 15%);
+  --pico-primary-hover-background: var(--bm-accent-dark);
+  --pico-primary-hover-border: var(--pico-primary-hover-background);
+  --pico-primary-hover-underline: var(--pico-primary-hover);
+  --pico-primary-focus: color-mix(in srgb, var(--bm-accent-dark) 30%, transparent);
+  --pico-primary-inverse: #fff;
+  --pico-text-selection-color: color-mix(in srgb, var(--bm-accent-dark) 30%, transparent);
+  --pico-background-color: var(--bm-charcoal);
+  --pico-card-background-color: var(--bm-slate);
+
+  --bm-header-bg: var(--bm-charcoal);
+  --bm-header-fg: var(--bm-paper);
+  --bm-info: #6ea8e6;
+  --bm-success: #5cc08a;
+  --bm-danger: #ff6b5e;
+}

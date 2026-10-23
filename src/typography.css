@@ -1,0 +1,38 @@
+/*
+ * Typography
+ * ------------------------------------------------------------------
+ * The few things Pico doesn't do. Grown out of pure-typography-i.
+ */
+
+/* Links: no underline, accent colour only (as on zoltansimon.me) */
+a:not([role="button"]) {
+  --pico-text-decoration: none;
+}
+
+.lead {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+.text-center { text-align: center; }
+.text-muted  { color: var(--pico-muted-color); }
+.text-accent { color: var(--pico-primary); }
+
+/* Quiet links, e.g. a row of tags or footer links */
+a.subdued {
+  --pico-color: var(--pico-muted-color);
+  margin-right: 0.75em;
+}
+a.subdued:hover { --pico-color: var(--pico-primary-hover); }
+a.subdued:last-child { margin-right: 0; }
+
+u.dotted { text-decoration: underline dotted; text-underline-offset: 0.2em; }
+u.dashed { text-decoration: underline dashed; text-underline-offset: 0.2em; }
+
+/* SVG diagrams with dark text need a light backing in dark mode */
+[data-theme="dark"] img[src$=".svg"] { background: #fff; border-radius: var(--pico-border-radius); }
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) img[src$=".svg"] { background: #fff; border-radius: var(--pico-border-radius); }
+}

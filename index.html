@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>beautiful-moonlight</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.classless.min.css">
+  <link rel="stylesheet" href="src/beautiful-moonlight.css">
+  <style>
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .swatches div div { height: 4rem; border-radius: var(--pico-border-radius); border: 1px solid var(--pico-muted-border-color); }
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: 1rem; }
+    .card-media { aspect-ratio: 16 / 9; margin: calc(var(--pico-block-spacing-vertical) * -1) calc(var(--pico-block-spacing-horizontal) * -1) var(--pico-spacing); background: linear-gradient(135deg, var(--pico-primary-background), var(--pico-primary-focus)); }
+    .controls select { width: auto; margin: 0; padding-block: 0.25rem; }
+  </style>
+</head>
+<body>
+  <header class="bm-header">
+    <nav>
+      <ul><li><strong>beautiful-moonlight</strong></li></ul>
+      <ul class="controls">
+        <li><select id="brand" aria-label="Brand"><option value="">zoltansimon.me</option><option value="timu">timu.io</option></select></li>
+        <li><select id="theme" aria-label="Theme"><option>light</option><option>dark</option></select></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="colors">
+      <h2>Colors</h2>
+      <div class="swatches" data-vars="--pico-primary --pico-primary-background --pico-primary-hover --bm-laser --bm-ember --bm-amber --bm-paper --bm-ink --bm-charcoal --bm-slate --bm-info --bm-success --bm-warning --bm-danger"></div>
+    </section>
+
+    <section id="typography">
+      <h2>Typography</h2>
+      <hgroup><h1>Heading one</h1><p>With a subtitle</p></hgroup>
+      <h2>Heading two</h2>
+      <h3>Heading three</h3>
+      <h4>Heading four</h4>
+      <h5>Heading five</h5>
+      <h6>Heading six</h6>
+      <p class="lead">A lead paragraph sets the tone. It is a little larger and reads like an opening line.</p>
+      <p>Body text with a <a href="#">link</a>, <strong>strong</strong>, <em>emphasis</em>, <mark>highlight</mark>, <code>code</code>, <kbd>⌘K</kbd>, <u class="dotted">dotted</u>, <u class="dashed">dashed</u> and <small>small print</small>.</p>
+      <blockquote>Simplicity is about subtracting the obvious and adding the meaningful.<footer><cite>— John Maeda</cite></footer></blockquote>
+      <ul><li>Unordered item</li><li>Another item</li></ul>
+      <ol><li>Ordered item</li><li>Another item</li></ol>
+      <pre><code>&lt;html data-brand="timu" data-theme="dark"&gt;</code></pre>
+      <p><a class="subdued" href="#">Subdued</a><a class="subdued" href="#">links</a><a class="subdued" href="#">in a row</a></p>
+      <p class="text-muted">Muted text. <span class="text-accent">Accent text.</span></p>
+    </section>
+
+    <section id="components">
+      <h2>Components</h2>
+      <h3>Linked card</h3>
+      <div class="cards">
+        <a class="bm-card" href="#"><article><div class="card-media"></div><h4>Platform as code</h4><p>The whole tile is a link.</p></article></a>
+        <a class="bm-card" href="#"><article><div class="card-media"></div><h4>Separation of concerns</h4><p>The heading lights up on hover.</p></article></a>
+      </div>
+      <h3>Alert</h3>
+      <div class="bm-alert"><strong>Info.</strong> Something worth knowing.</div>
+      <div class="bm-alert bm-alert-success"><strong>Done.</strong> It worked.</div>
+      <div class="bm-alert bm-alert-warning"><strong>Careful.</strong> This might matter.</div>
+      <div class="bm-alert bm-alert-danger"><strong>Stop.</strong> Something broke.</div>
+      <h3>Badge</h3>
+      <p><span class="bm-badge">Draft</span> <span class="bm-badge">Architecture</span> <span class="bm-badge bm-badge-accent">Featured</span></p>
+    </section>
+
+    <section id="pico">
+      <h2>Pico</h2>
+      <h3>Buttons</h3>
+      <p><button>Button</button> <a href="#" role="button">Link button</a> <button disabled>Disabled</button> <button aria-busy="true">Loading</button></p>
+      <h3>Form</h3>
+      <form onsubmit="return false">
+        <label>Email <input type="email" placeholder="you@example.com"></label>
+        <label>Site <select><option>zoltansimon.me</option><option>timu.io</option></select></label>
+        <label>Invalid <input type="text" value="Nope" aria-invalid="true"></label>
+        <label><input type="checkbox" checked> I agree</label>
+        <label><input type="checkbox" role="switch" checked> Switch</label>
+        <input type="submit" value="Send">
+      </form>
+      <h3>Card</h3>
+      <article><header>Header</header><p>Pico's card is an <code>&lt;article&gt;</code>.</p><footer>Footer</footer></article>
+      <h3>Table</h3>
+      <table>
+        <thead><tr><th>#</th><th>Post</th><th>Year</th></tr></thead>
+        <tbody><tr><td>1</td><td>Got hooked: the glorious ZX-81</td><td>2015</td></tr><tr><td>2</td><td>Separation of concerns</td><td>2018</td></tr></tbody>
+      </table>
+      <h3>Accordion</h3>
+      <details open><summary>Open</summary><p>Pico styles <code>&lt;details&gt;</code> as an accordion.</p></details>
+      <progress value="60" max="100"></progress>
+    </section>
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const params = new URLSearchParams(location.search);
+    const set = (k, v) => { v ? root.setAttribute('data-' + k, v) : root.removeAttribute('data-' + k); };
+    for (const k of ['brand', 'theme']) {
+      const el = document.getElementById(k);
+      if (params.has(k)) el.value = params.get(k);
+      set(k, el.value);
+      el.addEventListener('change', () => set(k, el.value));
+    }
+    for (const box of document.querySelectorAll('[data-vars]')) {
+      box.innerHTML = box.dataset.vars.split(' ').map(v =>
+        `<div><div style="background: var(${v})"></div><small><code>${v}</code></small></div>`).join('');
+    }
+  </script>
+</body>
+</html>
