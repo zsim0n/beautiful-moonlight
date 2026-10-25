@@ -1,5 +1,7 @@
 # beautiful-moonlight
 
+[![npm](https://img.shields.io/npm/v/beautiful-moonlight)](https://www.npmjs.com/package/beautiful-moonlight)
+
 A small design system on top of [Pico CSS](https://picocss.com): brand
 tokens, typography and a few components, themed for zoltansimon.me and
 timu.io.
